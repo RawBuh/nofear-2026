@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>БЕЗ СТРАХ / ПОД ФАСАДАТА — Архитектурен Форум 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0a0a0a;
+      --grey:    #141414;
+      --grey2:   #1c1c1c;
+      --yellow:  #F5C300;
+      --yellow2: #ffd130;
+      --white:   #f0f0eb;
+      --muted:   #66665f;
+      --border:  #242424;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ──────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo-badge {
+      background: transparent;
+      color: var(--white);
+      font-weight: 900;
+      font-size: 0.72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .nav-logo-x { color: var(--muted); font-size: 0.9rem; }
+    .nav-logo-qvent {
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: .08em;
+      color: var(--white);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-logo-qvent:hover { color: var(--yellow); }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--yellow) !important;
+      color: var(--black) !important;
+      padding: 9px 20px;
+      font-weight: 800 !important;
+    }
+    .nav-cta:hover { background: var(--yellow2) !important; }
+
+    /* ── SOCIAL ICONS ─────────────────────────── */
+    .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-right: 20px;
+    }
+    .nav-social-link {
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      transition: color .2s;
+    }
+    .nav-social-link:hover { color: var(--white); }
+
+    /* ── LANG SWITCHER ────────────────────────── */
+    .lang-switch {
+      display: flex;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-left: 8px;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      padding: 7px 12px;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+      text-transform: uppercase;
+    }
+    .lang-btn.active { background: var(--yellow); color: var(--black); }
+    .lang-btn:not(.active):hover { color: var(--white); }
+
+    /* ── SHARED ───────────────────────────────── */
+    section { padding: 96px 0; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 48px; }
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 18px;
+    }
+    .section-header { margin-bottom: 56px; }
+    h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .section-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 580px;
+      margin-top: 16px;
+      line-height: 1.8;
+    }
+
+    /* ── HERO ─────────────────────────────────── */
+    #hero {
+      background: var(--black);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 8vw;
+      gap: 6vw;
+    }
+    .hero-logo { flex: 0 0 40%; max-width: 400px; }
+    .hero-logo img { width: 100%; height: auto; display: block; }
+    .hero-text { flex: 1; min-width: 0; }
+    h1 {
+      font-size: clamp(2rem, 4.5vw, 5rem);
+      font-weight: 900;
+      letter-spacing: .02em;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.3em;
+    }
+    .hero-meta {
+      font-size: clamp(0.65rem, 1vw, 0.9rem);
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.6em;
+    }
+    .hero-desc {
+      font-size: clamp(0.82rem, 1.1vw, 0.95rem);
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 500px;
+    }
+    .hero-desc p + p { margin-top: 1em; }
+
+    /* ── SPEAKERS ─────────────────────────────── */
+    #speakers { background: var(--grey); }
+    #speakers h2 { color: var(--white); }
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .speaker-card {
+      background: var(--grey);
+      display: flex;
+      flex-direction: column;
+      border-left: 3px solid transparent;
+      transition: background .15s, border-color .15s;
+      overflow: hidden;
+    }
+    .speaker-card:hover { background: var(--grey2); border-left-color: var(--yellow); }
+    .sp-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(0.15);
+      transition: filter .3s;
+    }
+    .speaker-card:hover .sp-photo { filter: grayscale(0); }
+    .sp-info {
+      padding: 24px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .sp-country {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .sp-name {
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: var(--white);
+    }
+    .sp-studio {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    /* ── PROGRAM ──────────────────────────────── */
+    #program { background: var(--black); }
+    .program-days {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+    }
+    .program-day-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      transition: background .15s;
+    }
+    .program-day-row:last-child { border-bottom: none; }
+    .prog-row-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      padding: 48px 40px;
+      border-right: 1px solid var(--border);
+    }
+    .prog-day-num {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--border);
+      letter-spacing: -0.04em;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .prog-day-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .prog-date {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+    .prog-day-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      color: var(--white);
+    }
+    .prog-row-right {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .prog-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .prog-time {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    @media (max-width: 900px) {
+      .program-day-row { grid-template-columns: 1fr; }
+      .prog-row-left { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 24px; }
+      .prog-row-right { padding: 32px 24px; }
+    }
+
+    /* ── REGISTER ─────────────────────────────── */
+    #register {
+      background: var(--grey);
+      padding: 0;
+    }
+    .register-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+    .register-left {
+      display: flex;
+      flex-direction: column;
+    }
+    .register-photo {
+      width: 100%;
+      flex: 1;
+      object-fit: cover;
+      display: block;
+    }
+    .register-map {
+      width: 100%;
+      height: 240px;
+      border: none;
+      display: block;
+      filter: grayscale(0.3);
+    }
+    .register-address {
+      padding: 20px 28px;
+      background: var(--black);
+      border-top: 1px solid var(--border);
+    }
+    .register-address-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 6px;
+    }
+    .register-address-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .register-right {
+      padding: 80px 56px;
+      display: flex;
+      flex-direction: column;
+    }
+    .register-right .section-header { margin-bottom: 40px; }
+    .register-form-wrap { width: 100%; }
+    form {
+      background: transparent;
+      padding: 0;
+      width: 100%;
+    }
+    .form-title { display: none; }
+    .form-group { margin-bottom: 22px; }
+    label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 8px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: var(--black);
+      border: 1px solid var(--border);
+      padding: 13px 16px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color .2s;
+      outline: none;
+      border-radius: 0;
+    }
+    input::placeholder, textarea::placeholder { color: #3a3a38; }
+    input:focus, select:focus, textarea:focus { border-color: var(--yellow); }
+    select { appearance: none; cursor: pointer; }
+    select option { background: var(--black); }
+    textarea { resize: vertical; min-height: 80px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .form-check input[type="checkbox"] {
+      width: 18px; height: 18px; min-width: 18px;
+      margin-top: 2px;
+      accent-color: var(--yellow);
+      cursor: pointer;
+    }
+    .form-check label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: 0;
+      cursor: pointer;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .form-check label a { color: var(--yellow); text-decoration: none; }
+    .day-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .day-option { display: flex; cursor: pointer; }
+    .day-option input[type="radio"] { display: none; }
+    .day-option-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 12px;
+      background: var(--black);
+      border: 1px solid var(--border);
+      transition: border-color .15s, background .15s;
+      width: 100%;
+    }
+    .day-option:hover .day-option-inner { border-color: #404040; }
+    .day-option input[type="radio"]:checked + .day-option-inner {
+      border-color: var(--yellow);
+      background: rgba(245,195,0,0.06);
+    }
+    .day-option-date {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .day-option input[type="radio"]:checked + .day-option-inner .day-option-date { color: var(--yellow); }
+    .day-option-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+    .day-option input[type="radio"]:checked + .day-option-inner .day-option-name { color: var(--white); }
+    .btn-submit {
+      width: 100%;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 17px;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 900;
+      cursor: pointer;
+      margin-top: 8px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: background .15s;
+    }
+    .btn-submit:hover { background: var(--yellow2); }
+    .form-note {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.72rem;
+      color: #3a3a38;
+      letter-spacing: .04em;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .form-success .tick {
+      width: 52px; height: 52px;
+      background: var(--yellow);
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.4rem;
+    }
+    .form-success h3 {
+      font-size: 1.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--yellow);
+      letter-spacing: .06em;
+      margin-bottom: 10px;
+    }
+    .form-success p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+    /* ── PARTNERS ─────────────────────────────── */
+    #partners {
+      background: #ffffff;
+      border-top: none;
+      padding: 64px 0;
+    }
+    .partners-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .partners-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 40px;
+    }
+    .partners-logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px 56px;
+    }
+    .partner-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      filter: none;
+      opacity: 1;
+      transition: opacity .25s;
+    }
+    .partner-logo img:hover { opacity: 0.75; }
+    .partner-dark {
+      background: #1a1a1a;
+      padding: 10px 16px;
+    }
+
+    /* ── FOOTER ───────────────────────────────── */
+    footer {
+      background: #060606;
+      border-top: 1px solid var(--border);
+      padding: 36px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--yellow); }
+    footer p { font-size: 0.72rem; color: #3a3a38; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--yellow); }
+
+    /* ── RESPONSIVE ───────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      section { padding: 72px 0; }
+      .container { padding: 0 24px; }
+      #hero { padding: 80px 6vw 60px; gap: 5vw; }
+      .register-layout { grid-template-columns: 1fr; }
+      .register-left { position: static; height: auto; }
+      .register-photo { height: 260px; flex: none; }
+      .register-map { height: 200px; }
+      .register-right { padding: 56px 24px; }
+      footer { padding: 28px 24px; }
+      .program-cards { grid-template-columns: 1fr; }
+      .partners-inner { padding: 0 24px; }
+      .partners-logos { gap: 28px 36px; }
+      .partner-logo img { height: 34px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      #hero { flex-direction: column; align-items: center; text-align: center; }
+      .hero-logo { flex: 0 0 auto; width: 55vw; max-width: 220px; }
+      h1 { font-size: 11vw; }
+      .hero-meta { font-size: 3vw; }
+      .hero-desc { font-size: 3.8vw; text-align: left; }
+      form { padding: 36px 24px; }
+      .day-options { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-badge" data-i18n="nav.brand">Без Страх 2026</div>
+    <span class="nav-logo-x">by</span>
+    <a class="nav-logo-qvent" href="https://conveyer.bg/#profile" target="_blank">Conveyer</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#speakers" data-i18n="nav.speakers">Лектори</a></li>
+    <li><a href="#program" data-i18n="nav.program">Програма</a></li>
+    <li><a href="#register" class="nav-cta" data-i18n="nav.register">Регистрация</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://www.youtube.com" target="_blank" class="nav-social-link" aria-label="YouTube">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+    </a>
+    <a href="https://www.instagram.com" target="_blank" class="nav-social-link" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12c0-3.2 0-3.6.1-4.8C2.4 3.9 3.9 2.3 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9C23.7 2.7 21.3.3 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+    </a>
+    <a href="https://www.facebook.com" target="_blank" class="nav-social-link" aria-label="Facebook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.5h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+    </a>
+  </div>
+  <div class="lang-switch">
+    <button class="lang-btn active" onclick="setLang('bg')">BG</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-logo">
+    <img id="hero-logo" src="logo-bg.png" alt="БЕЗ СТРАХ / ПОД ФАСАДАТА × Q-VENT" />
+  </div>
+  <div class="hero-text">
+    <h1 data-i18n-html="hero.title">Архитектурен<br />Форум</h1>
+    <div class="hero-meta" data-i18n="hero.meta">30–31 Май 2026 | СОФИЯ</div>
+    <div class="hero-desc" data-i18n-html="hero.desc"><p>Тази година форум БЕЗ СТРАХ гостува на <a href="https://q-vent.com" target="_blank" style="color:var(--white);text-decoration:none;font-weight:700;">Q-VENT</a>.</p><p>Темата ПОД ФАСАДАТА е опит да се измести фокусът от видимото към скритото. Фасадата тук не се разглежда единствено като архитектурен елемент, а като метафора на образа — на това, което архитектурата показва, но и прикрива — процесите, изборите и колебанията, които остават невидими в крайния резултат, но всъщност го определят.</p></div>
+  </div>
+</section>
+
+
+<!-- SPEAKERS -->
+<section id="speakers">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="speakers.title">Лектори</h2>
+    </div>
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <img class="sp-photo" src="sp-katov.png" alt="Георги Кътов" />
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.bg">България</div>
+          <div class="sp-name" data-i18n="sp.katov">Георги Кътов</div>
+          <div class="sp-studio">I/O Architects</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo" src="sp-todorov.png" alt="Пламен Тодоров" />
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.bg">България</div>
+          <div class="sp-name" data-i18n="sp.todorov">Пламен Тодоров</div>
+          <div class="sp-studio">Zoom Studio</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo" src="sp-mitrovic.png" alt="Бранислав Митрович" />
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.rs">Сърбия</div>
+          <div class="sp-name" data-i18n="sp.mitrovic">Бранислав Митрович</div>
+          <div class="sp-studio">Mitarh Studio</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo" src="sp-kuzmanovic.png" alt="Елена Кузманович" />
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.rs">Сърбия</div>
+          <div class="sp-name" data-i18n="sp.kuzmanovic">Елена Кузманович</div>
+          <div class="sp-studio">Mitarh Studio</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo" src="sp-bradkov.png" alt="Пламен Брадков" />
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.bg">България</div>
+          <div class="sp-name" data-i18n="sp.bradkov">Пламен Брадков</div>
+          <div class="sp-studio">AEDES Studio</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo" src="sp-godar.png" alt="Naura Godar" />
+        <div class="sp-info">
+          <div class="sp-country">USA</div>
+          <div class="sp-name">Naura Godar</div>
+          <div class="sp-studio">RDG Design &amp; Planning</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo" src="sp-brendan.png" alt="Brendan Sapienza" />
+        <div class="sp-info">
+          <div class="sp-country">USA</div>
+          <div class="sp-name">Brendan Sapienza</div>
+          <div class="sp-studio">MSR Design</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo" src="sp-kevin.png" alt="Kevin Vonderberg" />
+        <div class="sp-info">
+          <div class="sp-country">USA</div>
+          <div class="sp-name">Kevin Vonderberg</div>
+          <div class="sp-studio">HGA</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <div class="sp-info">
+          <div class="sp-country">USA</div>
+          <div class="sp-name">Ilja Aljoskin</div>
+          <div class="sp-studio">LUHA</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.tr">Турция</div>
+          <div class="sp-name">Sinan Kilic</div>
+          <div class="sp-studio">Kasso</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.es">Испания</div>
+          <div class="sp-name">Mikel Ruiz</div>
+          <div class="sp-studio">Flexbrick</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.bg">България</div>
+          <div class="sp-name" data-i18n="sp.dimitrov">Пламен Димитров</div>
+          <div class="sp-studio">Q-VENT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="program.title">Програма</h2>
+    </div>
+
+    <div class="program-days">
+      <div class="program-day-row">
+        <div class="prog-row-left">
+          <div class="prog-day-meta">
+            <div class="prog-date" data-i18n="day1.date">30 Май · Събота</div>
+            <div class="prog-day-title" data-i18n-html="day1.title">Архитектурни Лекции</div>
+          </div>
+        </div>
+        <div class="prog-row-right">
+          <div class="prog-desc" data-i18n="day1.desc">Целодневна програма предлагаща погледа на архитектите. Съдържанието е насочено не само към професионалистите в сектора, но и към студенти и любители на архитектурата. Денят завършва с ранно DJ парти. Осигурен е симултанен превод между български и английски език.</div>
+          <div class="prog-time" data-i18n="day1.time">10:30 – 18:30</div>
+        </div>
+      </div>
+      <div class="program-day-row">
+        <div class="prog-row-left">
+          <div class="prog-day-meta">
+            <div class="prog-date" data-i18n="day2.date">31 Май · Неделя</div>
+            <div class="prog-day-title" data-i18n="day2.title">Фасадни решения</div>
+          </div>
+        </div>
+        <div class="prog-row-right">
+          <div class="prog-desc" data-i18n="day2.desc">Полудневна програма фокусирана върху нови и интересни фасадни решения. Съдържанието е насочено към архитекти, инженери и строителни специалисти и има за цел да даде информация от първа ръка и възможност за директни контакти.</div>
+          <div class="prog-time" data-i18n="day2.time">10:30 – 14:30</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- REGISTER -->
+<section id="register">
+  <div class="register-layout">
+    <div class="register-right">
+      <div class="section-header">
+        <h2 data-i18n="reg.title">Регистрация</h2>
+      </div>
+      <div class="register-form-wrap">
+      <form id="regForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname" data-i18n="form.fname">Име</label>
+            <input type="text" id="fname" name="fname" data-i18n-placeholder="form.fname_ph" placeholder="Иван" required />
+          </div>
+          <div class="form-group">
+            <label for="lname" data-i18n="form.lname">Фамилия</label>
+            <input type="text" id="lname" name="lname" data-i18n-placeholder="form.lname_ph" placeholder="Петров" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" data-i18n="form.email">Имейл адрес</label>
+          <input type="email" id="email" name="email" placeholder="ivan@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="company" data-i18n="form.company">Компания / Студио</label>
+          <input type="text" id="company" name="company" data-i18n-placeholder="form.company_ph" placeholder="Архитектурно студио..." />
+        </div>
+        <div class="form-group">
+          <label data-i18n="form.attending">Ще присъствам на</label>
+          <div class="day-options">
+            <label class="day-option">
+              <input type="radio" name="days" value="day1" required />
+              <span class="day-option-inner">
+                <span class="day-option-date" data-i18n="day1.date_short">30 Май · Събота</span>
+                <span class="day-option-name" data-i18n-html="day1.title">Архитектурни Лекции</span>
+              </span>
+            </label>
+            <label class="day-option">
+              <input type="radio" name="days" value="day2" />
+              <span class="day-option-inner">
+                <span class="day-option-date" data-i18n="day2.date_short">31 Май · Неделя</span>
+                <span class="day-option-name" data-i18n="day2.title">Фасадни решения</span>
+              </span>
+            </label>
+            <label class="day-option">
+              <input type="radio" name="days" value="both" />
+              <span class="day-option-inner">
+                <span class="day-option-date" data-i18n="days.both_date">30 + 31 Май</span>
+                <span class="day-option-name" data-i18n="days.both_name">И двата дни</span>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="role" data-i18n="form.role">Роля</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected data-i18n="form.role_ph">Изберете...</option>
+            <option value="architect" data-i18n="role.architect">Архитект</option>
+            <option value="engineer" data-i18n="role.engineer">Инженер / Конструктор</option>
+            <option value="student" data-i18n="role.student">Студент по архитектура</option>
+            <option value="developer" data-i18n="role.developer">Инвеститор / Предприемач</option>
+            <option value="contractor" data-i18n="role.contractor">Строителна компания</option>
+            <option value="other" data-i18n="role.other">Друго</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent" data-i18n-html="form.consent">Съгласен/а съм с <a href="#">Политиката за поверителност</a>. Информацията ще се използва единствено за организацията на събитието.</label>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit" data-i18n="form.submit">Регистрирай се →</button>
+        <p class="form-note" data-i18n="form.note">Потвърждение ще получиш на посочения имейл.</p>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="tick">✓</div>
+        <h3 data-i18n="success.title">Регистрацията е потвърдена!</h3>
+        <p data-i18n-html="success.body">Очаквай имейл с детайлите.<br /><br />До 30 Май —<br /><strong style="color:var(--yellow)">No Fear.</strong></p>
+      </div>
+    </div>
+    </div>
+    <div class="register-left">
+      <img class="register-photo" src="qvent-warehouse.png" alt="Q-VENT Warehouse" />
+      <iframe
+        class="register-map"
+        src="https://maps.google.com/maps?q=ул.+Проф.+Иван+Георгов+1А,+София&hl=bg&z=15&output=embed"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="register-address">
+        <div class="register-address-label" data-i18n="venue.label">Локация</div>
+        <div class="register-address-text" data-i18n="venue.address">ул. Проф. Иван Георгов 1А · София · Военна рампа</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="partners-inner">
+    <div class="partners-label" data-i18n="partners.label">Партньори</div>
+    <div class="partners-logos">
+      <div class="partner-logo"><img src="partner-conforma.png" alt="Conforma" /></div>
+      <div class="partner-logo"><img src="partner-flexbrick.png" alt="Flexbrick" /></div>
+      <div class="partner-logo"><img src="partner-kasso.png" alt="Kasso" /></div>
+      <div class="partner-logo"><img src="partner-luha.png" alt="Luha" /></div>
+      <div class="partner-logo"><img src="partner-design-inception.png" alt="Design Inception" /></div>
+      <div class="partner-logo partner-dark"><img src="partner-spark.png" alt="Spark" /></div>
+      <div class="partner-logo"><img src="partner-urbanize.png" alt="Urbanize Shop" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo" data-i18n-html="footer.logo"><span>БЕЗ СТРАХ</span> × Q-VENT · Архитектурен Форум 2026</div>
+  <p>
+    <a href="mailto:nofear@conveyer.bg">nofear@conveyer.bg</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.nofear.bg" target="_blank">nofear.bg</a>
+    &nbsp;·&nbsp;
+    <span data-i18n="footer.dates">30–31 Май 2026 · Q-VENT Warehouse · София</span>
+  </p>
+</footer>
+
+<script>
+const translations = {
+  bg: {
+    'nav.brand': 'Без Страх 2026',
+    'nav.theme': 'Темата',
+    'nav.speakers': 'Лектори',
+    'nav.program': 'Програма',
+    'nav.register': 'Регистрация',
+
+    'hero.eyebrow': 'Архитектурен Форум · София',
+    'hero.title': 'Архитектурен<br />Форум',
+    'hero.tagline': 'Под фасадата <span>|</span> Без страх <span>|</span> 30–31.05.2026',
+    'hero.body': '<p>Тази година форумът „БЕЗ СТРАХ" гостува на Q-VENT!</p><p>Темата „ПОД ФАСАДАТА" е опит да се измести фокусът от видимото към скритото. Фасадата не се разглежда само като архитектурен елемент, а като метафора — на това, което архитектурата показва, но и прикрива: процесите, изборите и колебанията, останали невидими в крайния резултат, но всъщност го определящи.</p><p>В програмата са включени AEDES Studio, I/O Architects, Zoom Studio, сръбското студио MITARH и американските HGA, MSR Design и RDG.</p><p>Присъединете се на 30 и 31 май в производствената база на Q-VENT, София.</p>',
+    'hero.meta': '30–31 Май 2026 | СОФИЯ',
+    'hero.desc': '<p>Тази година форум БЕЗ СТРАХ гостува на <a href="https://q-vent.com" target="_blank" style="color:var(--white);text-decoration:none;font-weight:700;">Q-VENT</a>.</p><p>Темата ПОД ФАСАДАТА е опит да се измести фокусът от видимото към скритото. Фасадата тук не се разглежда единствено като архитектурен елемент, а като метафора на образа — на това, което архитектурата показва, но и прикрива — процесите, изборите и колебанията, които остават невидими в крайния резултат, но всъщност го определят.</p><p>Целта ни е да създадем разговор, който да бъде едновременно професионално насочен и човешки откровен.</p><p>Събитието е безплатно, но е необходимо да се регистрирате.</p>',
+    'hero.reg_text': 'Събитието е с безплатен вход при предварителна регистрация.',
+    'hero.reg_link': 'Регистрирайте се тук.',
+
+    'manifesto.label': 'Манифест',
+    'manifesto.title': 'Архитек\u00adтура отвъд<br />финалния<br />образ',
+    'manifesto.body': '<p>Архитектурно-строителният форум „БЕЗ СТРАХ" традиционно създава пространство за открит разговор за архитектурата — отвъд завършените образи и общоприетите подходи.</p><p>Темата „ПОД ФАСАДАТА" е формулирана като опит да се измести фокусът от видимото към скритото. Фасадата тук не се разглежда единствено като архитектурен елемент, а като метафора на образа — на това, което архитектурата показва, но и прикрива. Интересът ни е насочен към процесите, изборите и колебанията, които остават невидими в крайния резултат, но всъщност го определят.</p><p>Целта ни е да създадем разговор, който да бъде едновременно професионално насочен и човешки откровен — в духа на „БЕЗ СТРАХ".</p><div class="manifesto-highlights"><div class="manifesto-point">Разкази за процеса зад проектите, не само крайният резултат</div><div class="manifesto-point">Решенията, които не се виждат на пръв поглед</div><div class="manifesto-point">Моментите, в които проектът променя посоката си</div><div class="manifesto-point">Съмненията, грешките и преосмислянията по пътя</div><div class="manifesto-point">Връзката между първоначалната идея и това, в което тя се превръща</div></div>',
+
+    'speakers.num': '01 \u00a0 Лектори',
+    'speakers.title': 'Лектори',
+    'speakers.desc': 'Архитекти и студия от България, Сърбия и САЩ — с реални истории от зад кулисите на проектите. Разговорите отвъд завършения образ.',
+
+    'country.bg': 'България',
+    'country.rs': 'Сърбия',
+    'country.tr': 'Турция',
+    'country.es': 'Испания',
+    'country.ee': 'Естония',
+    'sp.katov': 'Георги Кътов',
+    'sp.todorov': 'Пламен Тодоров',
+    'sp.mitrovic': 'Бранислав Митрович',
+    'sp.kuzmanovic': 'Елена Кузманович',
+    'sp.bradkov': 'Пламен Брадков',
+    'sp.dimitrov': 'Пламен Димитров',
+    'talk.may30.1100': 'Architecture Talks · 30 Май · 11:00',
+    'talk.may30.1200': 'Architecture Talks · 30 Май · 12:00',
+    'talk.may30.1400': 'Architecture Talks · 30 Май · 14:00',
+    'talk.may30.1500': 'Architecture Talks · 30 Май · 15:00',
+    'talk.panel': 'Intention to Execution Across Markets · Панел',
+
+    'program.num': '02 \u00a0 Програма',
+    'program.title': 'Програма',
+    'day1.date': '30 Май · Събота',
+    'day1.title': 'Архитектурни<br />Лекции',
+    'day1.type': 'Публично събитие',
+    'day1.desc': 'Целодневна програма предлагаща погледа на архитектите. Съдържанието е насочено не само към професионалистите в сектора, но и към студенти и любители на архитектурата. Денят завършва с ранно DJ парти. Осигурен е симултанен превод между български и английски език.',
+    'day1.time': '10:30 – 18:30',
+    'day1.badge': 'Безплатен вход',
+    'day2.date': '31 Май · Неделя',
+    'day2.type': 'B2B Сесия',
+    'day2.title': 'Фасадни решения',
+    'day2.desc': 'Полудневна програма фокусирана върху нови и интересни фасадни решения. Съдържанието е насочено към архитекти, инженери и строителни специалисти и има за цел да даде информация от първа ръка и възможност за директни контакти.',
+    'day2.time': '10:30 – 14:30',
+    'day2.badge': 'По покана · B2B',
+    'day1.date_short': '30 Май · Събота',
+    'day2.date_short': '31 Май · Неделя',
+    'days.both_date': '30 + 31 Май',
+    'days.both_name': 'И двата дни',
+
+    'agenda.day1.label': '30 Май · Събота · Architecture Talks · Публично събитие',
+    'agenda.day2.label': '31 Май · Неделя · Products Showcase · По покана · B2B',
+    'agenda.registration': 'Регистрация и кафе',
+    'agenda.lunch': 'Обедна почивка',
+    'agenda.lunch2': 'Обяд',
+    'agenda.coffee': 'Кафе пауза',
+    'agenda.talk1': 'Лекция<span class="panel-note">Под фасадата: процесът зад проектите</span>',
+    'agenda.talk2': 'Лекция<span class="panel-note">Скритите решения в архитектурата</span>',
+    'agenda.talk3': 'Лекция<span class="panel-note">Архитектура от Сърбия: когато проектът сменя посоката</span>',
+    'agenda.talk4': 'Лекция<span class="panel-note">Намерения, компромиси и крайни решения</span>',
+    'agenda.panel': 'Панел дискусия: Intention to Execution Across Markets<span class="panel-note">Naura Godar · Brendan Sapienza · Kevin Vonderberg + открита дискусия с поканени гости</span>',
+    'agenda.case': 'Case studies on unitised facades<span class="panel-note">Съвременни решения за вентилируеми фасадни системи</span>',
+    'agenda.bold': 'Bold shapes possible<span class="panel-note">Смели форми и иновативни фасадни решения</span>',
+    'agenda.skin': 'Alter skin<span class="panel-note">Гъвкави керамични фасадни системи</span>',
+
+    'about.num': '03 \u00a0 За нас',
+    'about.title': 'Организаторите',
+    'about.nf': '„БЕЗ СТРАХ" е асоциация на водещи български архитекти, обединени от убеждението, че добрата архитектура изисква смелост. Асоциацията организира повтарящ се архитектурен форум в София под същото име, където се представят най-значимите проекти, а студенти, представители на бранша и широката публика са поканени да се потопят в историите на архитектите — от първоначалните идеи до финалните решения.',
+    'about.qvent': 'Q-VENT е инженерна компания, специализирана в проектирането и производството на вентилируеми/rainscreen фасадни системи. Компанията работи по проекти по целия свят, основно на американския и европейския пазари, в партньорство с производители на фасадни материали, архитекти, инженери и изпълнители за разработване и изпълнение на технически решения за всеки проект.',
+    'about.host': 'Домакин на събитието: <strong style="color:var(--yellow)">Q-VENT Warehouse · София</strong>',
+    'partners.label': 'Партньори',
+
+    'reg.num': '04 \u00a0 Регистрация',
+    'reg.title': 'Регистрация',
+    'venue.label': 'Локация',
+    'venue.address': 'ул. Проф. Иван Георгов 1А · София · Военна рампа',
+    'reg.desc': 'Публичното събитие на <strong>30 Май 2026</strong> е напълно безплатно. Местата са ограничени — регистрирай се сега и получи потвърждение по имейл.',
+    'reg.perk1': 'Достъп до всички лекции и панел дискусията',
+    'reg.perk2': 'Нетуъркинг с 150–200 архитекти и специалисти',
+    'reg.perk3': 'Дигитален сертификат за участие',
+    'reg.perk4': 'Достъп до материалите след събитието',
+
+    'form.title': 'Безплатна регистрация',
+    'form.fname': 'Име', 'form.fname_ph': 'Иван',
+    'form.lname': 'Фамилия', 'form.lname_ph': 'Петров',
+    'form.email': 'Имейл адрес',
+    'form.company': 'Компания / Студио', 'form.company_ph': 'Архитектурно студио...',
+    'form.attending': 'Ще присъствам на',
+    'form.role': 'Роля', 'form.role_ph': 'Изберете...',
+    'form.consent': 'Съгласен/а съм с <a href="#">Политиката за поверителност</a>. Информацията ще се използва единствено за организацията на събитието.',
+    'form.submit': 'Регистрирай се →',
+    'form.note': 'Потвърждение ще получиш на посочения имейл.',
+    'role.architect': 'Архитект',
+    'role.engineer': 'Инженер / Конструктор',
+    'role.student': 'Студент по архитектура',
+    'role.developer': 'Инвеститор / Предприемач',
+    'role.contractor': 'Строителна компания',
+    'role.other': 'Друго',
+
+    'success.title': 'Регистрацията е потвърдена!',
+    'success.body': 'Очаквай имейл с детайлите.<br /><br />До 30 Май —<br /><strong style="color:var(--yellow)">No Fear.</strong>',
+
+    'footer.logo': '<span>БЕЗ СТРАХ</span> × Q-VENT · Архитектурен Форум 2026',
+    'footer.dates': '30–31 Май 2026 · Q-VENT Warehouse · София',
+
+    'hero.logo': 'logo-bg.png',
+  },
+
+  en: {
+    'nav.brand': 'No Fear 2026',
+    'nav.theme': 'Theme',
+    'nav.speakers': 'Speakers',
+    'nav.program': 'Programme',
+    'nav.register': 'Register',
+
+    'hero.eyebrow': 'Architectural Forum · Sofia',
+    'hero.title': 'Architectural<br />Forum',
+    'hero.tagline': 'Beneath the Facade <span>|</span> No Fear <span>|</span> 30–31.05.2026',
+    'hero.body': '<p>This year NO FEAR forum is hosted by Q-VENT!</p><p>The theme BENEATH THE FACADE is an attempt to shift the focus from the visible to the hidden. The facade is viewed not only as an architectural element, but also as a metaphor for image — for what architecture reveals, but also conceals: the processes, choices, and uncertainties that remain invisible in the final result, yet ultimately define it.</p><p>This year\'s programme features AEDES Studio, I/O Architects, Zoom Studio, Serbian studio MITARH, and US-based HGA, MSR Design, and RDG.</p><p>Join us on May 30 and 31 at the Q-VENT production facility, Sofia.</p>',
+    'hero.meta': '30–31 May 2026 | SOFIA',
+    'hero.desc': '<p>This year NO FEAR forum is hosted by <a href="https://q-vent.com" target="_blank" style="color:var(--white);text-decoration:none;font-weight:700;">Q-VENT</a>.</p><p>The theme BENEATH THE FACADE is an attempt to shift the focus from the visible to the hidden. The facade is viewed not only as an architectural element, but also as a metaphor for image — for what architecture reveals, but also conceals — the processes, choices, and uncertainties that remain invisible in the final result, yet ultimately define it.</p><p>Our goal is to create a conversation that is both professionally focused and humanly candid.</p><p>The event is free, but registration is required.</p>',
+    'hero.reg_text': 'The event is free with prior registration.',
+    'hero.reg_link': 'Register here.',
+
+    'manifesto.label': 'Manifesto',
+    'manifesto.title': 'Architecture beyond<br />the final<br />image',
+    'manifesto.body': '<p>The architectural forum "NO FEAR" traditionally creates a space for open discussion about architecture — beyond finished images and commonly accepted approaches.</p><p>The theme "BENEATH THE FACADE" is conceived as an attempt to shift the focus from the visible to the hidden. The facade is viewed not only as an architectural element, but also as a metaphor for image — for what architecture reveals, but also conceals. Our interest lies in the processes, choices, and hesitations that remain invisible in the final outcome, yet fundamentally shape it.</p><p>Our goal is to create a conversation that is both professionally focused and humanly candid — in the spirit of "NO FEAR".</p><div class="manifesto-highlights"><div class="manifesto-point">Stories about the process behind the projects, not just the final result</div><div class="manifesto-point">Decisions that are not visible at first glance</div><div class="manifesto-point">Moments when the project changes direction</div><div class="manifesto-point">Doubts, mistakes and reconsiderations along the way</div><div class="manifesto-point">The connection between the initial idea and what it becomes</div></div>',
+
+    'speakers.num': '01 \u00a0 Speakers',
+    'speakers.title': 'Speakers',
+    'speakers.desc': 'Architects and studios from Bulgaria, Serbia and the USA — with real stories from behind the scenes of their projects. Conversations beyond the finished image.',
+
+    'country.bg': 'Bulgaria',
+    'country.rs': 'Serbia',
+    'country.tr': 'Turkey',
+    'country.es': 'Spain',
+    'country.ee': 'Estonia',
+    'sp.katov': 'Georgi Katov',
+    'sp.todorov': 'Plamen Todorov',
+    'sp.mitrovic': 'Branislav Mitrovic',
+    'sp.kuzmanovic': 'Jelena Kuzmanovic',
+    'sp.bradkov': 'Plamen Bradkov',
+    'sp.dimitrov': 'Plamen Dimitrov',
+    'talk.may30.1100': 'Architecture Talks · May 30 · 11:00',
+    'talk.may30.1200': 'Architecture Talks · May 30 · 12:00',
+    'talk.may30.1400': 'Architecture Talks · May 30 · 14:00',
+    'talk.may30.1500': 'Architecture Talks · May 30 · 15:00',
+    'talk.panel': 'Intention to Execution Across Markets · Panel',
+
+    'program.num': '02 \u00a0 Programme',
+    'program.title': 'Programme',
+    'day1.date': 'May 30 · Saturday',
+    'day1.title': 'Architecture<br />Talks',
+    'day1.type': 'Public Event',
+    'day1.desc': 'A full-day programme offering the architects\' perspective. The content is aimed not only at industry professionals, but also at students and architecture enthusiasts. The day ends with an early DJ party. Simultaneous translation between Bulgarian and English is provided.',
+    'day1.time': '10:30 – 18:30',
+    'day1.badge': 'Free admission',
+    'day2.date': 'May 31 · Sunday',
+    'day2.type': 'B2B Session',
+    'day2.title': 'Facade Solutions',
+    'day2.desc': 'A half-day programme focused on new and interesting facade solutions. The content is aimed at architects, engineers, and construction professionals, with the goal of providing first-hand information and opportunities for direct contacts.',
+    'day2.time': '10:30 – 14:30',
+    'day2.badge': 'By invitation · B2B',
+    'day1.date_short': 'May 30 · Saturday',
+    'day2.date_short': 'May 31 · Sunday',
+    'days.both_date': 'May 30 + 31',
+    'days.both_name': 'Both days',
+
+    'agenda.day1.label': 'May 30 · Saturday · Architecture Talks · Public Event',
+    'agenda.day2.label': 'May 31 · Sunday · Products Showcase · By Invitation · B2B',
+    'agenda.registration': 'Registration & coffee',
+    'agenda.lunch': 'Lunch break',
+    'agenda.lunch2': 'Lunch',
+    'agenda.coffee': 'Coffee break',
+    'agenda.talk1': 'Talk<span class="panel-note">Beneath the facade: the process behind the projects</span>',
+    'agenda.talk2': 'Talk<span class="panel-note">Hidden decisions in architecture</span>',
+    'agenda.talk3': 'Talk<span class="panel-note">Architecture from Serbia: when the project changes direction</span>',
+    'agenda.talk4': 'Talk<span class="panel-note">Intentions, compromises and final decisions</span>',
+    'agenda.panel': 'Panel discussion: Intention to Execution Across Markets<span class="panel-note">Naura Godar · Brendan Sapienza · Kevin Vonderberg + open discussion with invited guests</span>',
+    'agenda.case': 'Case studies on unitised facades<span class="panel-note">Contemporary solutions for ventilated facade systems</span>',
+    'agenda.bold': 'Bold shapes possible<span class="panel-note">Bold forms and innovative facade solutions</span>',
+    'agenda.skin': 'Alter skin<span class="panel-note">Flexible ceramic facade systems</span>',
+
+    'about.num': '03 \u00a0 About',
+    'about.title': 'The Organisers',
+    'about.nf': '"NO FEAR" is an association of leading Bulgarian architects united by the belief that good architecture requires courage. The association organises a recurring architecture forum in Sofia under the same name, where the most compelling projects are presented and students, industry participants, and the general public are invited to immerse themselves in the architects\' stories — from initial ideas to final solutions.',
+    'about.qvent': 'Q-VENT is an engineering company specialising in the design and manufacture of ventilated/rainscreen facade systems. The company works on projects across the world, primarily in the US and European markets, partnering with facade material manufacturers, architects, engineers, and contractors to develop and deliver technical solutions for each project.',
+    'about.host': 'Host venue: <strong style="color:var(--yellow)">Q-VENT Warehouse · Sofia</strong>',
+    'partners.label': 'Partners',
+
+    'reg.num': '04 \u00a0 Registration',
+    'reg.title': 'Registration',
+    'venue.label': 'Venue',
+    'venue.address': 'Prof. Ivan Georgov 1A · Sofia · Voenna Rampa',
+    'reg.desc': 'The public event on <strong>May 30, 2026</strong> is completely free. Seats are limited — register now and receive confirmation by email.',
+    'reg.perk1': 'Access to all talks and the panel discussion',
+    'reg.perk2': 'Networking with 150–200 architects and professionals',
+    'reg.perk3': 'Digital certificate of participation',
+    'reg.perk4': 'Access to materials after the event',
+
+    'form.title': 'Free Registration',
+    'form.fname': 'First name', 'form.fname_ph': 'John',
+    'form.lname': 'Last name', 'form.lname_ph': 'Smith',
+    'form.email': 'Email address',
+    'form.company': 'Company / Studio', 'form.company_ph': 'Architecture studio...',
+    'form.attending': 'I will attend',
+    'form.role': 'Role', 'form.role_ph': 'Select...',
+    'form.consent': 'I agree to the <a href="#">Privacy Policy</a>. Information will be used solely for the organisation of the event.',
+    'form.submit': 'Register for free →',
+    'form.note': 'You will receive a confirmation at the provided email.',
+    'role.architect': 'Architect',
+    'role.engineer': 'Engineer / Structural Engineer',
+    'role.student': 'Architecture student',
+    'role.developer': 'Developer / Investor',
+    'role.contractor': 'Construction company',
+    'role.other': 'Other',
+
+    'success.title': 'Registration confirmed!',
+    'success.body': 'Check your inbox for details.<br /><br />See you on May 30 —<br /><strong style="color:var(--yellow)">No Fear.</strong>',
+
+    'footer.logo': '<span>NO FEAR</span> × Q-VENT · Architectural Forum 2026',
+    'footer.dates': '30–31 May 2026 · Q-VENT Warehouse · Sofia',
+
+    'hero.logo': 'logo.png',
+  }
+};
+
+let currentLang = 'bg';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+
+  // Text nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // HTML nodes
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // Placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+
+  // Logo swap
+  document.getElementById('hero-logo').src = t['hero.logo'];
+
+  // html lang attribute
+  document.documentElement.lang = lang;
+
+  // Switcher button states
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+  });
+}
+
+  document.getElementById('regForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    const s = document.getElementById('formSuccess');
+    s.style.display = 'block';
+    s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--white)' : '';
+    });
+  });
+</script>
+</body>
+</html>
