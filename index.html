@@ -315,19 +315,23 @@
       transition: filter .3s;
     }
     .speaker-card:hover .sp-photo { }
-    .sp-photo--sinan { object-position: center 20%; }
+    .sp-photo--sinan { object-position: center 80%; }
     .sp-photo--katov { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
     .sp-photo--todorov { object-position: center 10%; }
-    .sp-photo--viktoria { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
+    .sp-photo--viktoria { object-position: center 40%; filter: grayscale(100%) contrast(1.4) brightness(0.85); }
     .sp-photo--rositsa { object-position: center top; filter: grayscale(100%) contrast(1.4) brightness(0.85); }
     .sp-photo--dimitrov { object-position: center 38%; }
     .sp-photo--mikel { object-position: center 3%; filter: grayscale(100%) contrast(1.4) brightness(0.85); }
     .sp-photo--godar { object-position: center 43%; filter: grayscale(100%) brightness(0.82); }
     .sp-photo--bratkov { object-position: center 27%; filter: grayscale(100%) contrast(1.4) brightness(0.85); }
     .sp-photo--brendan { object-position: center 15%; }
-    .sp-photo--kevin { object-position: center top; }
-    .sp-photo--ilja { object-position: center 62%; }
-    .sp-photo--bora { object-position: center 10%; }
+    .sp-photo--kevin { object-position: center 40%; }
+    .sp-photo-zoom { width: 100%; height: 100%; overflow: hidden; }
+    .sp-photo-zoom--kevin .sp-photo--kevin { transform: scale(2.15); transform-origin: center top; }
+    .sp-photo-zoom--viktoria .sp-photo--viktoria { transform: scale(1.3); transform-origin: center top; }
+    .sp-photo-zoom--mitrovic .sp-photo--mitrovic { transform: scale(1.3); transform-origin: center center; }
+    .sp-photo--ilja { object-position: center 97%; }
+    .sp-photo--bora { object-position: center 10%; filter: grayscale(100%) brightness(0.75); }
     .sp-info {
       padding: 16px 18px 18px;
       display: flex;
@@ -1092,8 +1096,8 @@
       <div class="speaker-card">
         <img class="sp-photo sp-photo--godar" src="sp-godar.png?v=2" alt="Naura Godar" />
         <div class="sp-info">
-          <div class="sp-country">USA</div>
-          <div class="sp-name">Naura Godar</div>
+          <div class="sp-country" data-i18n="country.us">USA</div>
+          <div class="sp-name" data-i18n="sp.godar">Naura Godar</div>
           <div class="sp-studio">RDG Design &amp; Planning</div>
         </div>
       </div>
@@ -1107,7 +1111,7 @@
         </div>
       </div>
       <div class="speaker-card">
-        <img class="sp-photo sp-photo--viktoria" src="sp-viktoria.png?v=2" alt="Виктория Станчева" />
+        <div class="sp-photo-zoom sp-photo-zoom--viktoria"><img class="sp-photo sp-photo--viktoria" src="sp-viktoria.png?v=2" alt="Виктория Станчева" /></div>
         <div class="sp-info">
           <div class="sp-country" data-i18n="country.bg">България</div>
           <div class="sp-name" data-i18n="sp.viktoria">Виктория Станчева</div>
@@ -1115,7 +1119,7 @@
         </div>
       </div>
       <div class="speaker-card">
-        <img class="sp-photo" src="sp-mitrovic.png?v=2" alt="Бранислав Митрович" />
+        <div class="sp-photo-zoom sp-photo-zoom--mitrovic"><img class="sp-photo sp-photo--mitrovic" src="sp-mitrovic.png?v=2" alt="Бранислав Митрович" /></div>
         <div class="sp-info">
           <div class="sp-country" data-i18n="country.rs">Сърбия</div>
           <div class="sp-name" data-i18n="sp.mitrovic">Бранислав Митрович</div>
@@ -1133,40 +1137,40 @@
       <div class="speaker-card">
         <img class="sp-photo sp-photo--brendan" src="sp-brendan.png?v=2" alt="Brendan Sapienza" />
         <div class="sp-info">
-          <div class="sp-country">USA</div>
-          <div class="sp-name">Brendan Sapienza</div>
+          <div class="sp-country" data-i18n="country.us">USA</div>
+          <div class="sp-name" data-i18n="sp.brendan">Brendan Sapienza</div>
           <div class="sp-studio">MSR Design</div>
         </div>
       </div>
       <div class="speaker-card">
-        <img class="sp-photo sp-photo--kevin" src="sp-kevin.png?v=2" alt="Kevin Vonderberg" />
+        <img class="sp-photo sp-photo--ilja" src="sp-ilja.png?v=2" alt="Sinan Kilic" />
         <div class="sp-info">
-          <div class="sp-country">USA</div>
-          <div class="sp-name">Kevin Vonderberg</div>
+          <div class="sp-country" data-i18n="country.tr">Турция</div>
+          <div class="sp-name" data-i18n="sp.sinan">Sinan Kilic</div>
+          <div class="sp-studio">Kasso</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <div class="sp-photo-zoom sp-photo-zoom--kevin"><img class="sp-photo sp-photo--kevin" src="sp-kevin.png?v=2" alt="Kevin Vonderberg" /></div>
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.us">USA</div>
+          <div class="sp-name" data-i18n="sp.kevin">Kevin Vonderberg</div>
           <div class="sp-studio">HGA</div>
         </div>
       </div>
       <div class="speaker-card">
-        <img class="sp-photo sp-photo--ilja" src="sp-ilja.png?v=2" alt="Ilja Aljoskin" />
+        <img class="sp-photo sp-photo--sinan" src="sp-sinan.png?v=2" alt="Ilja Aljoskin" />
         <div class="sp-info">
-          <div class="sp-country">USA</div>
-          <div class="sp-name">Ilja Aljoskin</div>
+          <div class="sp-country" data-i18n="country.us">USA</div>
+          <div class="sp-name" data-i18n="sp.ilja">Ilja Aljoskin</div>
           <div class="sp-studio">LUHA</div>
-        </div>
-      </div>
-      <div class="speaker-card">
-        <img class="sp-photo sp-photo--sinan" src="sp-sinan.png?v=2" alt="Sinan Kilic" />
-        <div class="sp-info">
-          <div class="sp-country" data-i18n="country.tr">Турция</div>
-          <div class="sp-name">Sinan Kilic</div>
-          <div class="sp-studio">Kasso</div>
         </div>
       </div>
       <div class="speaker-card">
         <img class="sp-photo sp-photo--mikel" src="sp-mikel.png?v=2" alt="Mikel Ruiz" />
         <div class="sp-info">
           <div class="sp-country" data-i18n="country.es">Испания</div>
-          <div class="sp-name">Mikel Ruiz</div>
+          <div class="sp-name" data-i18n="sp.mikel">Mikel Ruiz</div>
           <div class="sp-studio">Flexbrick</div>
         </div>
       </div>
@@ -1424,6 +1428,7 @@ const translations = {
     'country.tr': 'Турция',
     'country.es': 'Испания',
     'country.ee': 'Естония',
+    'country.us': 'САЩ',
     'sp.katov': 'Георги Кътов',
     'sp.todorov': 'Пламен Тодоров',
     'sp.mitrovic': 'Бранислав Митрович',
@@ -1434,6 +1439,12 @@ const translations = {
     'sp.bora': 'Бора Петкова',
     'sp.bora.role': 'Модератор',
     'sp.dimitrov': 'Пламен Димитров',
+    'sp.godar': 'Наура Годар',
+    'sp.brendan': 'Брендан Сапиенца',
+    'sp.sinan': 'Синан Килич',
+    'sp.kevin': 'Кевин Вондерберг',
+    'sp.ilja': 'Иля Альошкин',
+    'sp.mikel': 'Микел Руис',
     'talk.may30.1100': 'Architecture Talks · 30 Май · 11:00',
     'talk.may30.1200': 'Architecture Talks · 30 Май · 12:00',
     'talk.may30.1400': 'Architecture Talks · 30 Май · 14:00',
@@ -1553,6 +1564,7 @@ const translations = {
     'country.tr': 'Turkey',
     'country.es': 'Spain',
     'country.ee': 'Estonia',
+    'country.us': 'USA',
     'sp.katov': 'Georgi Katov',
     'sp.todorov': 'Plamen Todorov',
     'sp.mitrovic': 'Branislav Mitrovic',
@@ -1563,6 +1575,12 @@ const translations = {
     'sp.bora': 'Bora Petkova',
     'sp.bora.role': 'Moderator',
     'sp.dimitrov': 'Plamen Dimitrov',
+    'sp.godar': 'Naura Godar',
+    'sp.brendan': 'Brendan Sapienza',
+    'sp.sinan': 'Sinan Kilic',
+    'sp.kevin': 'Kevin Vonderberg',
+    'sp.ilja': 'Ilja Aljoskin',
+    'sp.mikel': 'Mikel Ruiz',
     'talk.may30.1100': 'Architecture Talks · May 30 · 11:00',
     'talk.may30.1200': 'Architecture Talks · May 30 · 12:00',
     'talk.may30.1400': 'Architecture Talks · May 30 · 14:00',
