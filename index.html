@@ -315,11 +315,17 @@
       transition: filter .3s;
     }
     .speaker-card:hover .sp-photo { filter: grayscale(100%) brightness(1.08); }
-    .sp-photo--sinan { object-position: center 75%; }
+    .sp-photo--sinan { object-position: center top; }
+    .sp-photo--katov { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
+    .sp-photo--katov:hover { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
+    .sp-photo--rositsa { object-position: center top; filter: grayscale(100%) contrast(1.4) brightness(0.85); }
+    .sp-photo--rositsa:hover { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
     .sp-photo--dimitrov { object-position: center 38%; }
     .sp-photo--mikel { object-position: center 28%; }
-    .sp-photo--godar { object-position: center 23%; }
-    .sp-photo--bratkov { object-position: center 27%; }
+    .sp-photo--godar { object-position: center 38%; filter: grayscale(100%) brightness(0.82); }
+    .sp-photo--godar:hover { filter: grayscale(100%) brightness(1.08); }
+    .sp-photo--bratkov { object-position: center 27%; filter: grayscale(100%) contrast(1.4) brightness(0.85); }
+    .sp-photo--bratkov:hover { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
     .sp-photo--ilja { object-position: center 22%; }
     .sp-info {
       padding: 16px 18px 18px;
@@ -1057,8 +1063,9 @@
       <h2 data-i18n="speakers.title">Лектори</h2>
     </div>
     <div class="speakers-grid">
+      <!-- Row 1: Кътов, Браткова, Братков, Годар -->
       <div class="speaker-card">
-        <img class="sp-photo" src="sp-katov.png" alt="Георги Кътов" />
+        <img class="sp-photo sp-photo--katov" src="sp-katov.png" alt="Георги Кътов" />
         <div class="sp-info">
           <div class="sp-country" data-i18n="country.bg">България</div>
           <div class="sp-name" data-i18n="sp.katov">Георги Кътов</div>
@@ -1066,13 +1073,30 @@
         </div>
       </div>
       <div class="speaker-card">
-        <img class="sp-photo" src="sp-todorov.png" alt="Пламен Тодоров" />
+        <img class="sp-photo sp-photo--rositsa" src="sp-rositsa.png" alt="Росица Браткова" />
         <div class="sp-info">
           <div class="sp-country" data-i18n="country.bg">България</div>
-          <div class="sp-name" data-i18n="sp.todorov">Пламен Тодоров</div>
-          <div class="sp-studio">Zoom Studio</div>
+          <div class="sp-name" data-i18n="sp.rositsa">Росица Браткова</div>
+          <div class="sp-studio">AEDES Studio</div>
         </div>
       </div>
+      <div class="speaker-card">
+        <img class="sp-photo sp-photo--bratkov" src="sp-bradkov.png" alt="Пламен Братков" />
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.bg">България</div>
+          <div class="sp-name" data-i18n="sp.bradkov">Пламен Братков</div>
+          <div class="sp-studio">AEDES Studio</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo sp-photo--godar" src="sp-godar.png" alt="Naura Godar" />
+        <div class="sp-info">
+          <div class="sp-country">USA</div>
+          <div class="sp-name">Naura Godar</div>
+          <div class="sp-studio">RDG Design &amp; Planning</div>
+        </div>
+      </div>
+      <!-- Row 2: Митрович, Кузманович, Тодоров, Станчева -->
       <div class="speaker-card">
         <img class="sp-photo" src="sp-mitrovic.png" alt="Бранислав Митрович" />
         <div class="sp-info">
@@ -1090,19 +1114,19 @@
         </div>
       </div>
       <div class="speaker-card">
-        <img class="sp-photo sp-photo--bratkov" src="sp-bradkov.png" alt="Пламен Братков" />
+        <img class="sp-photo" src="sp-todorov.png" alt="Пламен Тодоров" />
         <div class="sp-info">
           <div class="sp-country" data-i18n="country.bg">България</div>
-          <div class="sp-name" data-i18n="sp.bradkov">Пламен Братков</div>
-          <div class="sp-studio">AEDES Studio</div>
+          <div class="sp-name" data-i18n="sp.todorov">Пламен Тодоров</div>
+          <div class="sp-studio">Zoom Studio</div>
         </div>
       </div>
       <div class="speaker-card">
-        <img class="sp-photo sp-photo--godar" src="sp-godar.png" alt="Naura Godar" />
+        <img class="sp-photo" src="sp-viktoria.png" alt="Виктория Станчева" />
         <div class="sp-info">
-          <div class="sp-country">USA</div>
-          <div class="sp-name">Naura Godar</div>
-          <div class="sp-studio">RDG Design &amp; Planning</div>
+          <div class="sp-country" data-i18n="country.bg">България</div>
+          <div class="sp-name" data-i18n="sp.viktoria">Виктория Станчева</div>
+          <div class="sp-studio">Zoom Studio</div>
         </div>
       </div>
       <div class="speaker-card">
@@ -1394,6 +1418,8 @@ const translations = {
     'sp.mitrovic': 'Бранислав Митрович',
     'sp.kuzmanovic': 'Елена Кузманович',
     'sp.bradkov': 'Пламен Братков',
+    'sp.rositsa': 'Росица Браткова',
+    'sp.viktoria': 'Виктория Станчева',
     'sp.dimitrov': 'Пламен Димитров',
     'talk.may30.1100': 'Architecture Talks · 30 Май · 11:00',
     'talk.may30.1200': 'Architecture Talks · 30 Май · 12:00',
@@ -1519,6 +1545,8 @@ const translations = {
     'sp.mitrovic': 'Branislav Mitrovic',
     'sp.kuzmanovic': 'Jelena Kuzmanovic',
     'sp.bradkov': 'Plamen Bratkov',
+    'sp.rositsa': 'Rositsa Bratkova',
+    'sp.viktoria': 'Viktoria Stancheva',
     'sp.dimitrov': 'Plamen Dimitrov',
     'talk.may30.1100': 'Architecture Talks · May 30 · 11:00',
     'talk.may30.1200': 'Architecture Talks · May 30 · 12:00',
