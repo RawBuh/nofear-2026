@@ -291,7 +291,8 @@
     .speakers-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: var(--grid-gap);
+      row-gap: var(--grid-gap);
+      column-gap: 0;
     }
     .speaker-card {
       background: var(--grey);
@@ -299,6 +300,7 @@
       display: grid;
       grid-template-rows: 1fr auto;
       border-left: 3px solid transparent;
+      border-right: 1px solid var(--black);
       transition: background .15s, border-color .15s;
       overflow: hidden;
     }
