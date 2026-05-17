@@ -314,19 +314,18 @@
       filter: grayscale(100%);
       transition: filter .3s;
     }
-    .speaker-card:hover .sp-photo { filter: grayscale(100%) brightness(1.08); }
-    .sp-photo--sinan { object-position: center top; }
+    .speaker-card:hover .sp-photo { }
+    .sp-photo--sinan { object-position: center 80%; }
     .sp-photo--katov { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
-    .sp-photo--katov:hover { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
+    .sp-photo--todorov { object-position: center 10%; }
+    .sp-photo--viktoria { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
     .sp-photo--rositsa { object-position: center top; filter: grayscale(100%) contrast(1.4) brightness(0.85); }
-    .sp-photo--rositsa:hover { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
     .sp-photo--dimitrov { object-position: center 38%; }
-    .sp-photo--mikel { object-position: center 28%; }
-    .sp-photo--godar { object-position: center 38%; filter: grayscale(100%) brightness(0.82); }
-    .sp-photo--godar:hover { filter: grayscale(100%) brightness(1.08); }
+    .sp-photo--mikel { object-position: center 28%; filter: grayscale(100%) contrast(1.4) brightness(0.85); }
+    .sp-photo--godar { object-position: center 43%; filter: grayscale(100%) brightness(0.82); }
     .sp-photo--bratkov { object-position: center 27%; filter: grayscale(100%) contrast(1.4) brightness(0.85); }
-    .sp-photo--bratkov:hover { filter: grayscale(100%) contrast(1.4) brightness(0.85); }
-    .sp-photo--ilja { object-position: center 22%; }
+    .sp-photo--ilja { object-position: center 62%; }
+    .sp-photo--bora { object-position: center 10%; }
     .sp-info {
       padding: 16px 18px 18px;
       display: flex;
@@ -1096,7 +1095,23 @@
           <div class="sp-studio">RDG Design &amp; Planning</div>
         </div>
       </div>
-      <!-- Row 2: Митрович, Кузманович, Тодоров, Станчева -->
+      <!-- Row 2: Тодоров, Станчева, Митрович, Кузманович -->
+      <div class="speaker-card">
+        <img class="sp-photo sp-photo--todorov" src="sp-todorov.png" alt="Пламен Тодоров" />
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.bg">България</div>
+          <div class="sp-name" data-i18n="sp.todorov">Пламен Тодоров</div>
+          <div class="sp-studio">Zoom Studio</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo sp-photo--viktoria" src="sp-viktoria.png" alt="Виктория Станчева" />
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.bg">България</div>
+          <div class="sp-name" data-i18n="sp.viktoria">Виктория Станчева</div>
+          <div class="sp-studio">Zoom Studio</div>
+        </div>
+      </div>
       <div class="speaker-card">
         <img class="sp-photo" src="sp-mitrovic.png" alt="Бранислав Митрович" />
         <div class="sp-info">
@@ -1111,22 +1126,6 @@
           <div class="sp-country" data-i18n="country.rs">Сърбия</div>
           <div class="sp-name" data-i18n="sp.kuzmanovic">Елена Кузманович</div>
           <div class="sp-studio">Mitarh Studio</div>
-        </div>
-      </div>
-      <div class="speaker-card">
-        <img class="sp-photo" src="sp-todorov.png" alt="Пламен Тодоров" />
-        <div class="sp-info">
-          <div class="sp-country" data-i18n="country.bg">България</div>
-          <div class="sp-name" data-i18n="sp.todorov">Пламен Тодоров</div>
-          <div class="sp-studio">Zoom Studio</div>
-        </div>
-      </div>
-      <div class="speaker-card">
-        <img class="sp-photo" src="sp-viktoria.png" alt="Виктория Станчева" />
-        <div class="sp-info">
-          <div class="sp-country" data-i18n="country.bg">България</div>
-          <div class="sp-name" data-i18n="sp.viktoria">Виктория Станчева</div>
-          <div class="sp-studio">Zoom Studio</div>
         </div>
       </div>
       <div class="speaker-card">
@@ -1167,6 +1166,14 @@
           <div class="sp-country" data-i18n="country.es">Испания</div>
           <div class="sp-name">Mikel Ruiz</div>
           <div class="sp-studio">Flexbrick</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img class="sp-photo sp-photo--bora" src="sp-bora.png" alt="Бора Петкова" />
+        <div class="sp-info">
+          <div class="sp-country" data-i18n="country.bg">България</div>
+          <div class="sp-name" data-i18n="sp.bora">Бора Петкова</div>
+          <div class="sp-studio" data-i18n="sp.bora.role">Модератор</div>
         </div>
       </div>
       <div class="speaker-card">
@@ -1315,7 +1322,9 @@
       </div>
     </div>
     <div class="register-venue">
-      <div class="register-venue-heading" data-i18n="venue.heading">Локация на събитието</div>
+      <div class="section-header">
+        <h2 data-i18n="venue.heading">Локация</h2>
+      </div>
       <div class="register-venue-row">
         <div class="register-photo-col">
           <div class="register-photo-wrap">
@@ -1420,6 +1429,8 @@ const translations = {
     'sp.bradkov': 'Пламен Братков',
     'sp.rositsa': 'Росица Браткова',
     'sp.viktoria': 'Виктория Станчева',
+    'sp.bora': 'Бора Петкова',
+    'sp.bora.role': 'Модератор',
     'sp.dimitrov': 'Пламен Димитров',
     'talk.may30.1100': 'Architecture Talks · 30 Май · 11:00',
     'talk.may30.1200': 'Architecture Talks · 30 Май · 12:00',
@@ -1472,7 +1483,7 @@ const translations = {
 
     'reg.num': '04 \u00a0 Регистрация',
     'reg.title': 'Регистрация',
-    'venue.heading': 'Локация на събитието',
+    'venue.heading': 'Локация',
     'venue.address': 'Q-VENT Warehouse<br>София · Военна рампа · ул. проф. Иван Георгов 1А',
     'reg.desc': 'Публичното събитие на <strong>30 Май 2026</strong> е напълно безплатно. Местата са ограничени — регистрирай се сега и получи потвърждение по имейл.',
     'reg.perk1': 'Достъп до всички лекции и панел дискусията',
@@ -1547,6 +1558,8 @@ const translations = {
     'sp.bradkov': 'Plamen Bratkov',
     'sp.rositsa': 'Rositsa Bratkova',
     'sp.viktoria': 'Viktoria Stancheva',
+    'sp.bora': 'Bora Petkova',
+    'sp.bora.role': 'Moderator',
     'sp.dimitrov': 'Plamen Dimitrov',
     'talk.may30.1100': 'Architecture Talks · May 30 · 11:00',
     'talk.may30.1200': 'Architecture Talks · May 30 · 12:00',
@@ -1599,7 +1612,7 @@ const translations = {
 
     'reg.num': '04 \u00a0 Registration',
     'reg.title': 'Registration',
-    'venue.heading': 'Event location',
+    'venue.heading': 'Location',
     'venue.address': 'Q-VENT Warehouse<br>Sofia · Voenna rampa · ul. Prof. Ivan Georgov 1A',
     'reg.desc': 'The public event on <strong>May 30, 2026</strong> is completely free. Seats are limited — register now and receive confirmation by email.',
     'reg.perk1': 'Access to all talks and the panel discussion',
